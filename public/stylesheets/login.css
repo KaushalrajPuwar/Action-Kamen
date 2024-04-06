@@ -104,7 +104,6 @@ body {
   border: none;
   border-bottom: 2px solid black;
   background: transparent;
-  /* color: white; */
 }
 
 ::placeholder {
@@ -174,10 +173,6 @@ body {
   height: auto;
 }
 
-.hidden {
-  display: none;
-}
-
 .unselectable {
   -webkit-touch-callout: none; /* iOS Safari */
   -webkit-user-select: none; /* Safari */
@@ -185,4 +180,9 @@ body {
   -moz-user-select: none; /* Firefox */
   -ms-user-select: none; /* Internet Explorer/Edge */
   user-select: none; /* Non-prefixed version, currently supported by Chrome, Edge, Opera and Firefox */
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
 }
