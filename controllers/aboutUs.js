@@ -1,0 +1,4 @@
+exports.get_about = function (req, res, next) {
+  res.render("aboutUs");
+};
+

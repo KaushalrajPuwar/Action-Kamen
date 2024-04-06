@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Taxi Pooling</title>
+    <link rel="stylesheet" href="taxiPooling.css" />
+    <link rel="stylesheet" href="navbar.css" />
+    <link rel="stylesheet" href="mediaQuerries.css" />
+  </head>
+  <body class="unselectable">
+    <div id="background-gradient"></div>
+    <nav id="desktop-nav">
+      <div class="logo">Website Name</div>
+      <ul class="nav-links">
+        <li><a href="mySchedule">My Schedule</a></li>
+        <li><a href="taxiPooling">Taxi Pooling</a></li>
+        <li><a href="aboutUs">About us</a></li>
+      </ul>
+    </nav>
+    <nav id="hamburger-nav">
+      <div class="logo">Website Name</div>
+      <div class="hamburger-menu">
+        <div class="hamburger-icon" onclick="toggleMenu()">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <div class="menu-links">
+          <li><a href="mySchedule">My Schedule</a></li>
+          <li><a href="taxiPooling">Taxi Pooling</a></li>
+          <li><a href="aboutUs">About us</a></li>
+        </div>
+      </div>
+    </nav>
+    <nav id="calendar-nav">
+      <div id="year-month-display">
+        <h3 id="month-display"></h3>
+        <h3 id="year-display"></h3>
+      </div>
+      <div class="arrow-container">
+        <img
+          src="images/leftArrow.svg"
+          alt="leftArrow"
+          id="leftArrow"
+          onclick="changeCalendar(-1)"
+        />
+        <img
+          src="images/rightArrow.svg"
+          alt="rightArrow"
+          id="rightArrow"
+          onclick="changeCalendar(1)"
+        />
+      </div>
+    </nav>
+    <ul id="calendar"></ul>
+    <ul id="day-calendar"></ul>
+    <div id="overlay" class="" onclick="closeDayCalendar()"></div>
+    <script src="taxiPooling.js"></script>
+  </body>
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Action Kamen Login Page</title>
+    <link rel="stylesheet" href="login.css" />
+    <link rel="stylesheet" href="mediaQuerries.css" />
+  </head>
+  <body>
+    <section class="login-section first-page">
+      <div class="login-wrapper">
+        <img
+          src="transparent-google-suite-icon-google-icon-5f7f985ccd60e3.5687494416021975968412.png"
+          alt="icon"
+          class="logo"
+        />
+        <h1 id="login-heading" class="unselectable">Log in</h1>
+        <p class="p-style1 unselectable">to continue to website</p>
+      </div>
+      <form class="login-info" method="POST" action="/taxiPooling">
+        <input type="text" class="text-input" id="rollnoinput" placeholder="Roll no" name="rollno"/>
+        <input type="password" class="text-input" id="pswd-input1" placeholder="Password" name="pwd"/>
+        <div class="toggle-show-pswd">
+          <button onclick="togglePassword('1')" class="toggle-btn">
+            <img src="show_pswd.svg" alt="toggle-icon" id="toggle-icon1"/>
+          </button>
+          <p class="p-style1 unselectable" id="toggle-text1">Show password</p>
+        </div>
+        <p class="p-style1 unselectable" id="question">
+          Not logged in? login to start taxi pooling
+        </p>
+        <div class="btns">
+          <button class="create-account-btn" onclick="signupPage()" type="button">
+            Create account
+          </button>
+          <button class="login-btn" type="submit">Login</button>
+        </div>
+      </form>
+    </section>
+    <section class="first-page signup-section hidden">
+      <div class="login-wrapper">
+        <img
+        src="transparent-google-suite-icon-google-icon-5f7f985ccd60e3.5687494416021975968412.png"
+        alt="icon"
+          class="logo"
+        />
+        <h1 id="login-heading" class="unselectable">Create a website account</h1>
+        <p class="p-style1 unselectable">to continue to website</p>
+      </div>
+      <form class="info-wrapper" method="POST" action="/">
+        <input type="text" class="text-input" id="rollnoinput" placeholder="Roll no"/>
+        <input type="text" class="text-input" id="name-input" placeholder="Name" />
+        <input type="text" class="text-input" id="phoneNo-input" placeholder="Phone number" />
+        <input type="password" class="text-input" id="pswd-input2" placeholder="Password" />
+        <div class="toggle-show-pswd">
+          <button onclick="togglePassword('2')" class="toggle-btn">
+            <img
+            src="show_pswd.svg"
+            alt="toggle-icon"
+            id="toggle-icon2"
+            />
+          </button>
+          <p class="p-style1 unselectable" id="toggle-text2">Show password</p>
+        </div>
+        <div class="btns">
+          <button class="create-account-btn unselectable" onclick="accountCreated()" type="submit">
+            Create account
+          </button>
+          <button class="account-exists unselectable" onclick="loginPage()" type="button">Go back</button>
+        </div>
+      </form>
+    </section>
+    <script src="login.js"></script>
+  </body>
+  </html>
