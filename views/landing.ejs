@@ -31,8 +31,43 @@
           Not logged in? login to start taxi pooling
         </p>
         <div class="btns">
-          <button class="create-account-btn" type="button"><a href="register">Create account</a></button>
+          <button class="create-account-btn" onclick="signupPage()" type="button">
+            Create account
+          </button>
           <button class="login-btn" type="submit">Login</button>
+        </div>
+      </form>
+    </section>
+    <section class="first-page signup-section hidden">
+      <div class="login-wrapper">
+        <img
+        src="transparent-google-suite-icon-google-icon-5f7f985ccd60e3.5687494416021975968412.png"
+        alt="icon"
+          class="logo"
+        />
+        <h1 id="login-heading" class="unselectable">Create a website account</h1>
+        <p class="p-style1 unselectable">to continue to website</p>
+      </div>
+      <form class="info-wrapper" method="POST" action="/">
+        <input type="text" class="text-input" id="rollnoinput" placeholder="Roll no"/>
+        <input type="text" class="text-input" id="name-input" placeholder="Name" />
+        <input type="text" class="text-input" id="phoneNo-input" placeholder="Phone number" />
+        <input type="password" class="text-input" id="pswd-input2" placeholder="Password" />
+        <div class="toggle-show-pswd">
+          <button onclick="togglePassword('2')" class="toggle-btn">
+            <img
+            src="show_pswd.svg"
+            alt="toggle-icon"
+            id="toggle-icon2"
+            />
+          </button>
+          <p class="p-style1 unselectable" id="toggle-text2">Show password</p>
+        </div>
+        <div class="btns">
+          <button class="create-account-btn unselectable" onclick="accountCreated()" type="submit">
+            Create account
+          </button>
+          <button class="account-exists unselectable" onclick="loginPage()" type="button">Go back</button>
         </div>
       </form>
     </section>
