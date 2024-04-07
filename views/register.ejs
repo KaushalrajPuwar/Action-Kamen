@@ -10,31 +10,57 @@
   <body>
     <section class="first-page signup-section">
       <div class="login-wrapper">
-        <img src="websiteIcon.png" alt="icon" class="logo"/>
-        <h1 id="login-heading" class="unselectable">Create a website account</h1>
+        <img src="websiteIcon.png" alt="icon" class="logo" />
+        <h1 id="login-heading" class="unselectable">
+          Create a website account
+        </h1>
         <p class="p-style1 unselectable">to continue to website</p>
       </div>
-      <form class="info-wrapper" method="POST" action="/">
-        <input type="text" class="text-input" id="rollnoinput" placeholder="Roll no"/>
-        <input type="text" class="text-input" id="name-input" placeholder="Name" />
-        <input type="text" class="text-input" id="phoneNo-input" placeholder="Phone number" />
-        <input type="password" class="text-input" id="pswd-input2" placeholder="Password" />
+      <form class="info-wrapper" method="POST" action="/register">
+        <input
+          type="text"
+          class="text-input"
+          id="rollnoinput"
+          placeholder="Roll no"
+          name="rollno"
+        />
+        <input
+          type="text"
+          class="text-input"
+          id="name-input"
+          placeholder="Name"
+          name="name"
+        />
+        <input
+          type="text"
+          class="text-input"
+          id="phoneNo-input"
+          placeholder="Phone number"
+          name="phone"
+        />
+        <input
+          type="password"
+          class="text-input"
+          id="pswd-input2"
+          placeholder="Password"
+          name="password"
+        />
         <div class="toggle-show-pswd">
           <button onclick="togglePassword('2')" class="toggle-btn">
-            <img
-            src="show_pswd.svg"
-            alt="toggle-icon"
-            id="toggle-icon2"
-            />
+            <img src="show_pswd.svg" alt="toggle-icon" id="toggle-icon2" />
           </button>
           <p class="p-style1 unselectable" id="toggle-text2">Show password</p>
         </div>
         <div class="btns">
-          <button class="create-account-btn unselectable" type="submit">Create account</button>
-          <button class="account-exists unselectable" type="button"><a href="/">Go back</a></button>
+          <button class="create-account-btn unselectable" type="submit">
+            Create account
+          </button>
+          <button class="account-exists unselectable" type="button">
+            <a href="/">Go back</a>
+          </button>
         </div>
       </form>
     </section>
     <script src="login.js"></script>
   </body>
-  </html>
+</html>

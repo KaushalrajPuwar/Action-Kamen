@@ -8,13 +8,16 @@
     <link rel="stylesheet" href="mediaQuerries.css" />
   </head>
   <body>
+    <% if (messages.error) { %>
+      <%= messages.error %>
+    <% } %>
     <section class="login-section first-page">
       <div class="login-wrapper">
         <img src="websiteIcon.png" alt="icon" class="logo"/>
         <h1 id="login-heading" class="unselectable">Log in</h1>
         <p class="p-style1 unselectable">to continue to website</p>
       </div>
-      <form class="login-info" method="POST" action="/taxiPooling">
+      <form class="login-info" action="/login" method="POST">
         <input type="text" class="text-input" id="rollnoinput" placeholder="Roll no" name="rollno"/>
         <input type="password" class="text-input" id="pswd-input1" placeholder="Password" name="pwd"/>
         <div class="toggle-show-pswd">

@@ -1,9 +1,8 @@
-const { authenticate } = require('passport')
 const bcrypt = require('bcrypt')
-var localstrat = require('passport-local').Strategy
+const localstrat = require('passport-local').Strategy
 
 
-function initialise(passport, getUserByRoll) {
+function initialize(passport, getUserByRoll, getUserById) {
     const authenticateUser = async (rollno, password, done) => {
         const user = getUserByRoll(rollno)
         if (user == null){
@@ -11,7 +10,7 @@ function initialise(passport, getUserByRoll) {
         }
         try{
             if(await bcrypt.compare(password, user.password)){
-                return done(null, user);
+                return done(null, user)
             }
             else{
                 return done(null, false, {message: "Password Incorrect"});
@@ -22,9 +21,9 @@ function initialise(passport, getUserByRoll) {
         }
 
     }
-    passport.use(new localstrat({ usernameField: 'rollno' }), authenticateUser)
-    passport.serialiseUser((rollno, done) => { })
-    passport.deserialiseUser((rollno, done) => {});
+    passport.use(new localstrat({ usernameField: 'rollno' }, authenticateUser))
+    passport.serializeUser((user, done) => { done(null, user.id) })
+    passport.deserializeUser((id, done) => { return done(null, getUserById(id)); });
 }
 
-module.export = initialise
+module.exports = initialize
