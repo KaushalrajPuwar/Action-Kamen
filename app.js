@@ -3,6 +3,8 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
+const { auth } = require("express-openid-connect");
+require('dotenv').config()
 
 
 var indexRouter = require('./routes/index');
@@ -10,12 +12,22 @@ var usersRouter = require('./routes/users');
 
 var app = express();
 
+const config = {
+  authRequired: false,
+  auth0Logout: true,
+  secret: process.env.SECRET,
+  baseURL: process.env.BASEURL,
+  clientID: process.env.CLIENTID,
+  issuerBaseURL: process.env.ISSUER
+};
+
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 app.use(express.static(path.join(__dirname, "/public/images")));
 app.use(express.static(path.join(__dirname, "/public/javascripts")));
 app.use(express.static(path.join(__dirname, "/public/stylesheets")));
+app.use(auth(config));
 
 
 app.use(logger('dev'));
